@@ -12,8 +12,8 @@ import java.util.Map;
 
 public class MainActivity extends Activity {
 
-    private String testURL(String URL) {
-        final String[] result = { "No" };
+    private Boolean testURL(String URL) {
+        Boolean[] result = {false};
         Thread thread = new Thread(() -> {
             try {
                 java.net.URL url = new java.net.URL(URL);
@@ -24,7 +24,14 @@ public class MainActivity extends Activity {
                 while ((readLen = inputStream.read(buf)) != -1) {
                     outputStream.write(buf, 0, readLen);
                 }
-                result[0] = outputStream.toString();
+
+                if (outputStream.toString().strip().equals("200")) {
+                    result[0] = true;
+                } else {
+                    result[0] = false;
+                }
+
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -63,13 +70,13 @@ public class MainActivity extends Activity {
         sites.put("AbreHamrahi", "https://abrehamrahi.ir/o/public/EaGlAEy6");
 
         for (Map.Entry<String, String> entry : sites.entrySet()) {
-            outputString.append("\n").append(entry.getKey() + " - " + testURL(entry.getValue()));
+            outputString.append("\n").append(entry.getKey() + " - " + testURL(entry.getValue()).toString());
             view.setText(outputString);
             MediaPlayer mp = MediaPlayer.create(this, R.raw.notification_simple_01);
             mp.start();
         }
 
-        outputString.append("\n").append("End");
+        outputString.append("\n\n").append("End");
         view.setText(outputString);
     }
 }
