@@ -1,12 +1,16 @@
 package ir.ammari.rasad;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
@@ -52,14 +56,19 @@ public class MainActivity extends Activity {
     }
 
     void displayResult(TextView textView) {
-        final var text = new StringBuilder();
+        final var text = new SpannableStringBuilder();
         text.append("Begin\n\n\n");
         for (Map.Entry<String, String> entry : sites.entrySet()) {
             final var key = entry.getKey();
             text.append(key);
             if (result.containsKey(key)) {
                 text.append(" - ");
-                text.append(result.get(key));
+                final var success = Boolean.TRUE.equals(result.get(key));
+                final var color = new ForegroundColorSpan(success ? Color.GREEN : Color.RED);
+                final var string = success ? "success" : "fail";
+                SpannableString spannable = new SpannableString(string);
+                spannable.setSpan(color, 0, string.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                text.append(spannable);
                 text.append("\n");
             } else text.append("…\n");
         }
