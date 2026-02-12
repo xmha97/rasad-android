@@ -2,39 +2,6 @@
 <issues format="6" by="lint 9.0.0" type="baseline" client="gradle" dependencies="true" name="AGP (9.0.0)" variant="all" version="9.0.0">
 
     <issue
-        id="UnusedAttribute"
-        message="Attribute `banner` is only used in API level 21 and higher (current min is 1)"
-        errorLine1="        android:banner=&quot;@mipmap/ic_launcher&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/AndroidManifest.xml"
-            line="5"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="UnusedAttribute"
-        message="Attribute `fillType` is only used in API level 24 and higher (current min is 1)"
-        errorLine1="        android:fillType=&quot;nonZero&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="src/main/res/drawable/ic_launcher.xml"
-            line="8"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="AndroidGradlePluginVersion"
-        message="A newer version of Gradle than 9.2.1 is available: 9.3.1"
-        errorLine1="distributionUrl=https\://services.gradle.org/distributions/gradle-9.2.1-bin.zip"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="../gradle/wrapper/gradle-wrapper.properties"
-            line="3"
-            column="17"/>
-    </issue>
-
-    <issue
         id="MinSdkTooLow"
         message="The value of minSdkVersion (1) is too low. It can be incremented without noticeably reducing the number of supported devices."
         errorLine1="        minSdk = 1"
@@ -43,13 +10,6 @@
             file="build.gradle.kts"
             line="14"
             column="9"/>
-    </issue>
-
-    <issue
-        id="UnusedResources"
-        message="The resource `R.raw.hero_simple_celebration_03` appears to be unused">
-        <location
-            file="src/main/res/raw/hero_simple_celebration_03.ogg"/>
     </issue>
 
     <issue
@@ -66,7 +26,7 @@
         errorLine2="                            ~~~~~~">
         <location
             file="src/main/java/ir/ammari/rasad/MainActivity.java"
-            line="51"
+            line="70"
             column="29"/>
     </issue>
 
