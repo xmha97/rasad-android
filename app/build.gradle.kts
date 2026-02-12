@@ -1,3 +1,6 @@
+import org.gradle.kotlin.dsl.lint
+import kotlin.plus
+
 plugins {
     alias(libs.plugins.com.android.application)
 }
@@ -40,6 +43,25 @@ android {
     }
 
     buildFeatures { resValues = false }
+
+
+    lint {
+        warningsAsErrors = true
+        abortOnError = true
+        checkAllWarnings = true
+        checkReleaseBuilds = true
+        checkDependencies = true
+        checkTestSources = true
+        checkGeneratedSources = true
+        baseline = file("lint-baseline.xml") // To update: ./gradlew updateLintBaseline
+        disable += listOf(
+            "MissingTranslation",
+            "SelectableText",
+            "IconLocation",
+            "DuplicateStrings",
+        )
+    }
+
 }
 
 dependencies {

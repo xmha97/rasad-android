@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Bouncy"
+rootProject.name = "Rasad"
 include(":app")
  
