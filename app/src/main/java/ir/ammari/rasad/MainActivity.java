@@ -3,6 +3,7 @@ package ir.ammari.rasad;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -38,13 +39,14 @@ public class MainActivity extends Activity {
         put("AbreHamrahi", "https://abrehamrahi.ir/o/public/EaGlAEy6");
     }};
 
-    private void testURL(Map<String, Boolean> status, @NonNull TextView textView, @NonNull String name, @NonNull URL url) {
+    private void testURL(Map<String, String> status, @NonNull TextView textView, @NonNull String name, @NonNull URL url) {
         new Thread(() -> {
-            var result = false;
+            var result = "Invalid result";
             try (final var inputStream = url.openStream()) {
                 if (inputStream.read() == '2' && inputStream.read() == '0' && inputStream.read() == '0')
-                    result = true;
+                    result = "200";
             } catch (IOException e) {
+                result = e.getMessage();
                 e.printStackTrace();
             }
             final var finalResult = result;
@@ -55,7 +57,7 @@ public class MainActivity extends Activity {
         }).start();
     }
 
-    private void displayResult(Map<String, Boolean> status, @NonNull TextView textView, boolean inProgress) {
+    private void displayResult(Map<String, String> status, @NonNull TextView textView, boolean inProgress) {
         final var text = new SpannableStringBuilder();
         text.append("Begin\n\n\n\n");
         for (final var entry : sites.entrySet()) {
@@ -63,11 +65,12 @@ public class MainActivity extends Activity {
             text.append(key);
             if (status.containsKey(key)) {
                 text.append(" - ");
-                final var success = Boolean.TRUE.equals(status.get(key));
+                var result = status.get(key);
+                result = result == null ? "" : result;
+                final var success = result.equals("success");
                 final var color = new ForegroundColorSpan(success ? Color.GREEN : Color.RED);
-                final var string = success ? "success" : "fail";
-                final var spannable = new SpannableString(string);
-                spannable.setSpan(color, 0, string.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                final var spannable = new SpannableString(result);
+                spannable.setSpan(color, 0, result.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 text.append(spannable);
                 text.append("\n");
             } else text.append(inProgress ? "…\n" : "\n");
@@ -82,6 +85,9 @@ public class MainActivity extends Activity {
         final var linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
         final var textView = new TextView(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            textView.setTextIsSelectable(true);
+        }
         linearLayout.addView(textView);
         final var button = new Button(this);
         button.setText("Run");
@@ -94,7 +100,7 @@ public class MainActivity extends Activity {
     }
 
     private void testAll(TextView textView) {
-        final var status = new HashMap<String, Boolean>();
+        final var status = new HashMap<String, String>();
         displayResult(status, textView, true);
         for (final var entry : sites.entrySet()) {
             try {
