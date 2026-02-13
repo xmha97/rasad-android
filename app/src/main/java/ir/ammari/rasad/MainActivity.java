@@ -34,11 +34,11 @@ public class MainActivity extends Activity {
         put("HamGit", "https://hamgit.ir/xmha97/test/-/raw/main/status");
         put("AbreHamrahi", "https://abrehamrahi.ir/o/public/EaGlAEy6");
     }};
-    private final Map<String, Boolean> result = new HashMap<>();
+    private final Map<String, Boolean> status = new HashMap<>();
 
     private void testURL(@NonNull TextView textView, @NonNull String name, @NonNull URL url) {
         new Thread(() -> {
-            var caseResult = false;
+            var result = false;
             try (final var inputStream = url.openStream()) {
                 final var outputStream = new ByteArrayOutputStream();
                 final var buf = new byte[1024];
@@ -46,13 +46,13 @@ public class MainActivity extends Activity {
                 while ((readLen = inputStream.read(buf)) != -1) {
                     outputStream.write(buf, 0, readLen);
                 }
-                if (outputStream.toString().strip().equals("200")) caseResult = true;
+                if (outputStream.toString().strip().equals("200")) result = true;
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            final var finalCaseResult = caseResult;
+            final var finalResult = result;
             runOnUiThread(() -> {
-                result.put(name, finalCaseResult);
+                status.put(name, finalResult);
                 displayResult(textView);
             });
         }).start();
@@ -64,9 +64,9 @@ public class MainActivity extends Activity {
         for (final var entry : sites.entrySet()) {
             final var key = entry.getKey();
             text.append(key);
-            if (result.containsKey(key)) {
+            if (status.containsKey(key)) {
                 text.append(" - ");
-                final var success = Boolean.TRUE.equals(result.get(key));
+                final var success = Boolean.TRUE.equals(status.get(key));
                 final var color = new ForegroundColorSpan(success ? Color.GREEN : Color.RED);
                 final var string = success ? "success" : "fail";
                 SpannableString spannable = new SpannableString(string);
@@ -88,7 +88,7 @@ public class MainActivity extends Activity {
     }
 
     private void testAll(TextView textView) {
-        result.clear();
+        status.clear();
         displayResult(textView);
         for (final var entry : sites.entrySet()) {
             try {
