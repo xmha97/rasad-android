@@ -1,5 +1,6 @@
 package ir.ammari.rasad;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,6 +8,9 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -73,18 +77,27 @@ public class MainActivity extends Activity {
                 spannable.setSpan(color, 0, string.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 text.append(spannable);
                 text.append("\n");
-            } else text.append("…\n");
+            } else text.append("\n");
         }
         textView.setText(text);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final var linearLayout = new LinearLayout(this);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
         final var textView = new TextView(this);
-        setContentView(textView);
-        testAll(textView);
-        textView.setOnClickListener((v) -> testAll(textView));
+        linearLayout.addView(textView);
+        final var button = new Button(this);
+        button.setText("Run");
+        linearLayout.addView(button);
+        button.setOnClickListener((v) -> testAll(textView));
+        final var root = new ScrollView(this);
+        setContentView(root);
+        root.addView(linearLayout);
+        displayResult(textView);
     }
 
     private void testAll(TextView textView) {
