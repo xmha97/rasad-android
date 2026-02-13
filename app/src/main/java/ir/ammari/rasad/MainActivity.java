@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
 
     private void displayResult(@NonNull TextView textView) {
         final var text = new SpannableStringBuilder();
-        text.append("Begin\n\n\n");
+        text.append("Begin\n\n\n\n");
         for (final var entry : sites.entrySet()) {
             final var key = entry.getKey();
             text.append(key);
@@ -82,8 +82,14 @@ public class MainActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final var textView = new TextView(this);
-        displayResult(textView);
         setContentView(textView);
+        testAll(textView);
+        textView.setOnClickListener((v) -> testAll(textView));
+    }
+
+    private void testAll(TextView textView) {
+        result.clear();
+        displayResult(textView);
         for (final var entry : sites.entrySet()) {
             try {
                 testURL(textView, entry.getKey(), new URL(entry.getValue()));
