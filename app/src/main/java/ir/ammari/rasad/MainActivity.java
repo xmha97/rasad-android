@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
     private void displayResult(TextView textView) {
         final var text = new SpannableStringBuilder();
         text.append("Begin\n\n\n");
-        for (Map.Entry<String, String> entry : sites.entrySet()) {
+        for (final var entry : sites.entrySet()) {
             final var key = entry.getKey();
             text.append(key);
             if (result.containsKey(key)) {
@@ -81,7 +81,7 @@ public class MainActivity extends Activity {
         final var textView = new TextView(this);
         displayResult(textView);
         setContentView(textView);
-        for (Map.Entry<String, String> entry : sites.entrySet()) {
+        for (final var entry : sites.entrySet()) {
             try {
                 testURL(textView, entry.getKey(), new URL(entry.getValue()));
             } catch (MalformedURLException e) {
