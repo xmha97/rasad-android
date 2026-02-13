@@ -38,9 +38,8 @@ public class MainActivity extends Activity {
         put("HamGit", "https://hamgit.ir/xmha97/test/-/raw/main/status");
         put("AbreHamrahi", "https://abrehamrahi.ir/o/public/EaGlAEy6");
     }};
-    private final Map<String, Boolean> status = new HashMap<>();
 
-    private void testURL(@NonNull TextView textView, @NonNull String name, @NonNull URL url) {
+    private void testURL(Map<String, Boolean> status, @NonNull TextView textView, @NonNull String name, @NonNull URL url) {
         new Thread(() -> {
             var result = false;
             try (final var inputStream = url.openStream()) {
@@ -57,12 +56,12 @@ public class MainActivity extends Activity {
             final var finalResult = result;
             runOnUiThread(() -> {
                 status.put(name, finalResult);
-                displayResult(textView);
+                displayResult(status, textView, true);
             });
         }).start();
     }
 
-    private void displayResult(@NonNull TextView textView) {
+    private void displayResult(Map<String, Boolean> status, @NonNull TextView textView, boolean inProgress) {
         final var text = new SpannableStringBuilder();
         text.append("Begin\n\n\n\n");
         for (final var entry : sites.entrySet()) {
@@ -77,7 +76,7 @@ public class MainActivity extends Activity {
                 spannable.setSpan(color, 0, string.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 text.append(spannable);
                 text.append("\n");
-            } else text.append("\n");
+            } else text.append(inProgress ? "…\n" : "\n");
         }
         textView.setText(text);
     }
@@ -97,15 +96,15 @@ public class MainActivity extends Activity {
         final var root = new ScrollView(this);
         setContentView(root);
         root.addView(linearLayout);
-        displayResult(textView);
+        displayResult(new HashMap<>(), textView, false);
     }
 
     private void testAll(TextView textView) {
-        status.clear();
-        displayResult(textView);
+        final var status = new HashMap<String, Boolean>();
+        displayResult(status, textView, true);
         for (final var entry : sites.entrySet()) {
             try {
-                testURL(textView, entry.getKey(), new URL(entry.getValue()));
+                testURL(status, textView, entry.getKey(), new URL(entry.getValue()));
             } catch (MalformedURLException e) {
                 throw new RuntimeException(e);
             }
