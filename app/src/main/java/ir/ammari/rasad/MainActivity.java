@@ -8,7 +8,6 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -90,7 +89,7 @@ public class MainActivity extends Activity {
         scrollView.addView(textView);
         final var scrollViewParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
+                0
         );
         scrollViewParams.weight = 1f;
         scrollView.setLayoutParams(scrollViewParams);
@@ -101,7 +100,7 @@ public class MainActivity extends Activity {
             root.setFitsSystemWindows(true);
         }
         final var buttonLayoutParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
+                0,
                 ViewGroup.LayoutParams.MATCH_PARENT
         );
         buttonLayoutParams.weight = 1f;
