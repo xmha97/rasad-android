@@ -58,7 +58,6 @@ public class MainActivity extends Activity {
 
     private void displayResult(Map<String, String> status, @NonNull TextView textView) {
         final var text = new SpannableStringBuilder();
-        text.append("\n\n\n\n");
         for (final var entry : sites.entrySet()) {
             final var key = entry.getKey();
             text.append(key);
@@ -82,11 +81,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         final var linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
+        final var space = new TextView(this);
+        space.setText("\n\n\n");
+        linearLayout.addView(space);
         final var textView = new TextView(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             textView.setTextIsSelectable(true);
         }
-        textView.setText("\n\n\n\n");
         textView.setHorizontallyScrolling(true);
         linearLayout.addView(textView);
         final var button = new Button(this);
