@@ -9,7 +9,7 @@
             android:name=".MainActivity"
             android:configChanges="keyboardHidden|screenSize|screenLayout|uiMode|orientation"
             android:exported="true"
-            android:theme="@android:style/Theme.NoTitleBar">
+            android:theme="@style/Theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
