@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme" parent="android:Theme.DeviceDefault.NoActionBar" />
+    <style name="Theme" parent="android:Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarDividerColor">@android:color/transparent</item>
+    </style>
 </resources>
