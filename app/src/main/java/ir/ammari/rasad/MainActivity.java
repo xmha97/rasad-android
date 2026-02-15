@@ -1,5 +1,6 @@
 package ir.ammari.rasad;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build;
@@ -17,7 +18,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
@@ -110,13 +113,32 @@ public class MainActivity extends Activity {
         testButton.setOnClickListener((v) -> testAll(textView));
         testButton.setLayoutParams(buttonLayoutParams);
         buttonBar.addView(testButton);
-        final var clearButton = new Button(this);
-        clearButton.setText(R.string.clear);
-        clearButton.setOnClickListener((v) -> textView.setText(""));
-        clearButton.setLayoutParams(buttonLayoutParams);
-        buttonBar.addView(clearButton);
+        final var pingButton = new Button(this);
+        pingButton.setText(R.string.ping);
+        pingButton.setOnClickListener((v) -> ping(textView));
+        pingButton.setLayoutParams(buttonLayoutParams);
+        buttonBar.addView(pingButton);
         root.addView(buttonBar);
         setContentView(root);
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void ping(TextView textView) {
+        textView.setText("");
+        new Thread(() -> {
+            final var runtime = Runtime.getRuntime();
+            try (final var inputStream = runtime.exec("ping -c 4 google.com").getInputStream()) {
+                final var br = new BufferedReader(new InputStreamReader(inputStream));
+                String line;
+                while ((line = br.readLine()) != null) {
+                    final var finalLine = line;
+                    runOnUiThread(() -> textView.setText(textView.getText() + "\n" + finalLine));
+                }
+                br.close();
+            } catch (IOException e) {
+                textView.setText(e.getMessage());
+            }
+        }).start();
     }
 
     private void testAll(TextView textView) {

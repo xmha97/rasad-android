@@ -2,5 +2,5 @@
 <resources>
     <string name="app_name">Rasad</string>
     <string name="test">Test</string>
-    <string name="clear">Clear</string>
+    <string name="ping">Ping</string>
 </resources>

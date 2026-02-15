@@ -2,5 +2,5 @@
 <resources>
     <string name="app_name">رصد</string>
     <string name="test">بررسی</string>
-    <string name="clear">پاکسازی</string>
+    <string name="ping">پینگ</string>
 </resources>
