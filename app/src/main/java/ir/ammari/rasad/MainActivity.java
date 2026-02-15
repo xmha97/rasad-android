@@ -85,6 +85,7 @@ public class MainActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final var textView = new TextView(this);
+        textView.setId(R.id.result);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             textView.setTextIsSelectable(true);
         }
