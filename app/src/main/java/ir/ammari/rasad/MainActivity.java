@@ -46,22 +46,22 @@ public class MainActivity extends Activity {
         put("HamGit (GitLab)", "https://hamgit.ir/xmha97/test/-/raw/main/status");
         put("AbreHamrahi", "https://abrehamrahi.ir/o/public/EaGlAEy6");
 
-        put("GitHub Gists", "http://gist.githubusercontent.com/xmha97/94f6ba425d9874179fdd73fc0e2dc899/raw/e3a7ca5109c651f711000b3a02b4e032bd1d695f/status");
-        put("GitHub Repository", "http://raw.githubusercontent.com/xmha97/test/refs/heads/main/status");
-        put("GitHub Releases", "http://github.com/xmha97/test/releases/download/v1.0.0/status");
-        put("GitHub Pages", "http://xmha97.github.io/status");
-        put("Codeberg Repository", "http://codeberg.org/xmha97/test/raw/branch/main/status");
-        put("Codeberg Releases", "http://codeberg.org/xmha97/test/releases/download/v1.0.0/status");
-        put("GitLab", "http://gitlab.com/xmha97/test/-/raw/master/status");
-        put("DropBox", "http://www.dropbox.com/scl/fi/dovory2z1y9xnj6kxwyq7/status?rlkey=48kb8gpm3fjnx76oglv1bm3u0&st=hy5uz0th&dl=1");
-        put("Archive", "http://archive.org/download/xmha97/status");
-        put("Archive (Tor)", "http://archivep75mbjunhxc6x4j5mwjmomyxb573v42baldlqu56ruil2oiad.onion/download/xmha97/status");
-        put("Pastebin", "http://pastebin.com/raw/ER5BRSx7");
-        put("Wikipedia (English)", "http://en.wikipedia.org/w/index.php?title=User:Xmha97/status.js&action=raw&ctype=text/javascript");
-        put("Wikipedia (Persian)", "http://fa.wikipedia.org/w/index.php?title=User:Xmha97/status.js&action=raw&ctype=text/javascript");
-        put("Wikipedia (Arabic)", "http://ar.wikipedia.org/w/index.php?title=User:Xmha97/status.js&action=raw&ctype=text/javascript");
-        put("HamGit (GitLab)", "http://hamgit.ir/xmha97/test/-/raw/main/status");
-        put("AbreHamrahi", "http://abrehamrahi.ir/o/public/EaGlAEy6");
+        put("GitHub Gists (HTTP)", "http://gist.githubusercontent.com/xmha97/94f6ba425d9874179fdd73fc0e2dc899/raw/e3a7ca5109c651f711000b3a02b4e032bd1d695f/status");
+        put("GitHub Repository (HTTP)", "http://raw.githubusercontent.com/xmha97/test/refs/heads/main/status");
+        put("GitHub Releases (HTTP)", "http://github.com/xmha97/test/releases/download/v1.0.0/status");
+        put("GitHub Pages (HTTP)", "http://xmha97.github.io/status");
+        put("Codeberg Repository (HTTP)", "http://codeberg.org/xmha97/test/raw/branch/main/status");
+        put("Codeberg Releases (HTTP)", "http://codeberg.org/xmha97/test/releases/download/v1.0.0/status");
+        put("GitLab (HTTP)", "http://gitlab.com/xmha97/test/-/raw/master/status");
+        put("DropBox (HTTP)", "http://www.dropbox.com/scl/fi/dovory2z1y9xnj6kxwyq7/status?rlkey=48kb8gpm3fjnx76oglv1bm3u0&st=hy5uz0th&dl=1");
+        put("Archive (HTTP)", "http://archive.org/download/xmha97/status");
+        put("Archive (Tor) (HTTP)", "http://archivep75mbjunhxc6x4j5mwjmomyxb573v42baldlqu56ruil2oiad.onion/download/xmha97/status");
+        put("Pastebin (HTTP)", "http://pastebin.com/raw/ER5BRSx7");
+        put("Wikipedia (English) (HTTP)", "http://en.wikipedia.org/w/index.php?title=User:Xmha97/status.js&action=raw&ctype=text/javascript");
+        put("Wikipedia (Persian) (HTTP)", "http://fa.wikipedia.org/w/index.php?title=User:Xmha97/status.js&action=raw&ctype=text/javascript");
+        put("Wikipedia (Arabic) (HTTP)", "http://ar.wikipedia.org/w/index.php?title=User:Xmha97/status.js&action=raw&ctype=text/javascript");
+        put("HamGit (GitLab) (HTTP)", "http://hamgit.ir/xmha97/test/-/raw/main/status");
+        put("AbreHamrahi (HTTP)", "http://abrehamrahi.ir/o/public/EaGlAEy6");
     }};
 
     private void testURL(Map<String, String> status, @NonNull TextView textView, @NonNull String name, @NonNull URL url) {
