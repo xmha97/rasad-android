@@ -46,9 +46,11 @@ public class MainActivity extends Activity {
         put("HamGit (GitLab)", "https://hamgit.ir/xmha97/test/-/raw/main/status");
         put("Rokhsara (Gitea)", "https://git.rokhsara.com/xmha97/test/raw/branch/main/status");
         put("Fandak (Gitea)", "https://gitea.fandak.lol/xmha97/test/raw/branch/main/status");
+        put("Paragraph (Forgejo)", "https://git.prgph.fun/xmha97/test/raw/branch/main/status);
         put("AbreHamrahi", "https://abrehamrahi.ir/o/public/vlwU5cXR");
         put("AbreHamrahi (ShortenerLink)", "https://abhm.ir/kpWgPj");
         put("JS-org", "https://pad.js.org/status");
+        put("Paragraph (Forgejo)", "https://git.prgph.fun/xmha97/test/raw/branch/main/status);
 
         put("GitHub Gists (HTTP)", "http://gist.githubusercontent.com/xmha97/94f6ba425d9874179fdd73fc0e2dc899/raw/e3a7ca5109c651f711000b3a02b4e032bd1d695f/status");
         put("GitHub Repository (HTTP)", "http://raw.githubusercontent.com/xmha97/test/refs/heads/main/status");
@@ -66,7 +68,8 @@ public class MainActivity extends Activity {
         put("Wikipedia (Arabic) (HTTP)", "http://ar.wikipedia.org/w/index.php?title=User:Xmha97/status.js&action=raw&ctype=text/javascript");
         put("HamGit (GitLab) (HTTP)", "http://hamgit.ir/xmha97/test/-/raw/main/status");
         put("Rokhsara (Gitea) (HTTP)", "http://git.rokhsara.com/xmha97/test/raw/branch/main/status");
-        put("Fandak (Gitea)", "http://gitea.fandak.lol/xmha97/test/raw/branch/main/status");
+        put("Fandak (Gitea) (HTTP)", "http://gitea.fandak.lol/xmha97/test/raw/branch/main/status");
+        put("Paragraph (Forgejo) (HTTP)", "https://git.prgph.fun/xmha97/test/raw/branch/main/status);
         put("AbreHamrahi (HTTP)", "http://abrehamrahi.ir/o/public/vlwU5cXR");
         put("AbreHamrahi (ShortenerLink) (HTTP)", "http://abhm.ir/kpWgPj");
         put("JS-org (HTTP)", "http://pad.js.org/status");
