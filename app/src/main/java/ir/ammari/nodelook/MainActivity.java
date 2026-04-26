@@ -54,6 +54,7 @@ public class MainActivity extends Activity {
         put("Uupload (ShortenerLink)", "https://my.uupload.ir/dl/NdQ4K1BD");
         put("Uupload", "https://s15.uupload.ir/files/xmha97/status.txt");
         put("jsDelivr", "https://cdn.jsdelivr.net/gh/xmha97/test@1.0.0/status");
+        put("TEROZA", "https://trzw.ir/up/loads/status.txt");
 
         put("GitHub Gists (HTTP)", "http://gist.githubusercontent.com/xmha97/94f6ba425d9874179fdd73fc0e2dc899/raw/e3a7ca5109c651f711000b3a02b4e032bd1d695f/status");
         put("GitHub Repository (HTTP)", "http://raw.githubusercontent.com/xmha97/test/refs/heads/main/status");
@@ -79,6 +80,7 @@ public class MainActivity extends Activity {
         put("Uupload (ShortenerLink) (HTTP)", "http://my.uupload.ir/dl/NdQ4K1BD");
         put("Uupload (HTTP)", "http://s15.uupload.ir/files/xmha97/status.txt");
         put("jsDelivr (HTTP)", "http://cdn.jsdelivr.net/gh/xmha97/test@1.0.0/status");
+        put("TEROZA (HTTP)", "http://trzw.ir/up/loads/status.txt");
     }};
 
     private void testURL(Map<String, String> status, @NonNull TextView textView, @NonNull String name, @NonNull URL url) {
