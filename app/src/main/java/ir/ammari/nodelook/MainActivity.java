@@ -55,6 +55,7 @@ public class MainActivity extends Activity {
         put("Uupload", "https://s15.uupload.ir/files/xmha97/status.txt");
         put("jsDelivr", "https://cdn.jsdelivr.net/gh/xmha97/test@1.0.0/status");
         put("TEROZA", "https://trzw.ir/up/loads/status.txt");
+        put("Liara", "https://obd.storage.c2.liara.space/status?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=6b96162b-d379-44a7-ae3f-e3cd178bbf19%2F20260429%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260429T040002Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=064a1ef82adc6efe0918f74c909742770da989d9b90a348ec345d52fd0871e77");
 
         put("GitHub Gists (HTTP)", "http://gist.githubusercontent.com/xmha97/94f6ba425d9874179fdd73fc0e2dc899/raw/e3a7ca5109c651f711000b3a02b4e032bd1d695f/status");
         put("GitHub Repository (HTTP)", "http://raw.githubusercontent.com/xmha97/test/refs/heads/main/status");
@@ -81,6 +82,8 @@ public class MainActivity extends Activity {
         put("Uupload (HTTP)", "http://s15.uupload.ir/files/xmha97/status.txt");
         put("jsDelivr (HTTP)", "http://cdn.jsdelivr.net/gh/xmha97/test@1.0.0/status");
         put("TEROZA (HTTP)", "http://trzw.ir/up/loads/status.txt");
+        put("Liara (HTTP)", "http://obd.storage.c2.liara.space/status?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=6b96162b-d379-44a7-ae3f-e3cd178bbf19%2F20260429%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260429T040002Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=064a1ef82adc6efe0918f74c909742770da989d9b90a348ec345d52fd0871e77");
+
     }};
 
     private void testURL(Map<String, String> status, @NonNull TextView textView, @NonNull String name, @NonNull URL url) {
