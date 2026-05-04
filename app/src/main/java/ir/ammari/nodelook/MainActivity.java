@@ -56,7 +56,13 @@ public class MainActivity extends Activity {
         put("jsDelivr", "https://cdn.jsdelivr.net/gh/xmha97/test@1.0.0/status");
         put("TEROZA", "https://trzw.ir/up/loads/status.txt");
         put("Liara", "https://obd.storage.c2.liara.space/status?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=6b96162b-d379-44a7-ae3f-e3cd178bbf19%2F20260429%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260429T040002Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=064a1ef82adc6efe0918f74c909742770da989d9b90a348ec345d52fd0871e77");
-        put("ArvanStorage (DotOne)", "https://test-hive.s3.ir-thr-at1.arvanstorage.ir/status");
+        put("ArvanStorage (Tehran-Standard DotOne)", "https://test-hive.s3.ir-thr-at1.arvanstorage.ir/status");
+        put("ArvanStorage (Tehran-Standard)", "https://xmh.s3.ir-thr-at1.arvanstorage.ir/status");
+        put("ArvanStorage (Tehran-Standard WebSite)", "https://xmh.s3-website.ir-thr-at1.arvanstorage.ir/status");
+        put("ArvanStorage (Tehran-HiOps)", "https://xmh.hot.ir-central1.arvanstorage.ir/status");
+        put("ArvanStorage (Tehran-HiOps WebSite)", "https://xmh.hot-website.ir-central1.arvanstorage.ir/status");
+        put("ArvanStorage (Tabriz)", "https://xmh.s3.ir-tbz-sh1.arvanstorage.ir/status");
+        put("ArvanStorage (Tabriz WebSite)", "https://xmh.s3-website.ir-tbz-sh1.arvanstorage.ir/status");
         
         put("GitHub Gists (HTTP)", "http://gist.githubusercontent.com/xmha97/94f6ba425d9874179fdd73fc0e2dc899/raw/e3a7ca5109c651f711000b3a02b4e032bd1d695f/status");
         put("GitHub Repository (HTTP)", "http://raw.githubusercontent.com/xmha97/test/refs/heads/main/status");
@@ -84,7 +90,13 @@ public class MainActivity extends Activity {
         put("jsDelivr (HTTP)", "http://cdn.jsdelivr.net/gh/xmha97/test@1.0.0/status");
         put("TEROZA (HTTP)", "http://trzw.ir/up/loads/status.txt");
         put("Liara (HTTP)", "http://obd.storage.c2.liara.space/status?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=6b96162b-d379-44a7-ae3f-e3cd178bbf19%2F20260429%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260429T040002Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=064a1ef82adc6efe0918f74c909742770da989d9b90a348ec345d52fd0871e77");
-        put("ArvanStorage (DotOne) (HTTP)", "http://test-hive.s3.ir-thr-at1.arvanstorage.ir/status");
+        put("ArvanStorage (Tehran-Standard DotOne) (HTTP)", "http://test-hive.s3.ir-thr-at1.arvanstorage.ir/status");
+        put("ArvanStorage (Tehran-Standard) (HTTP)", "http://xmh.s3.ir-thr-at1.arvanstorage.ir/status");
+        put("ArvanStorage (Tehran-Standard WebSite) (HTTP)", "http://xmh.s3-website.ir-thr-at1.arvanstorage.ir/status");
+        put("ArvanStorage (Tehran-HiOps) (HTTP)", "http://xmh.hot.ir-central1.arvanstorage.ir/status");
+        put("ArvanStorage (Tehran-HiOps WebSite) (HTTP)", "http://xmh.hot-website.ir-central1.arvanstorage.ir/status");
+        put("ArvanStorage (Tabriz) (HTTP)", "http://xmh.s3.ir-tbz-sh1.arvanstorage.ir/status");
+        put("ArvanStorage (Tabriz WebSite) (HTTP)", "http://xmh.s3-website.ir-tbz-sh1.arvanstorage.ir/status");
     }};
 
     private void testURL(Map<String, String> status, @NonNull TextView textView, @NonNull String name, @NonNull URL url) {
