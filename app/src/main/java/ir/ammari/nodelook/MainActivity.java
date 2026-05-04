@@ -47,6 +47,7 @@ public class MainActivity extends Activity {
         put("HamGit (GitLab)", "https://hamgit.ir/xmha97/test/-/raw/main/status");
         put("Rokhsara (Gitea)", "https://git.rokhsara.com/xmha97/test/raw/branch/main/status");
         put("Fandak (Gitea)", "https://gitea.fandak.lol/xmha97/test/raw/branch/main/status");
+        put("Mred (Gitea)", "https://git.mred.ir/xmha97/test/raw/branch/main/status");
         put("Paragraph (Forgejo)", "https://git.prgph.fun/xmha97/test/raw/branch/main/status");
         put("AbreHamrahi", "https://abrehamrahi.ir/o/public/vlwU5cXR");
         put("AbreHamrahi (ShortenerLink)", "https://abhm.ir/kpWgPj");
@@ -81,6 +82,7 @@ public class MainActivity extends Activity {
         put("HamGit (GitLab) (HTTP)", "http://hamgit.ir/xmha97/test/-/raw/main/status");
         put("Rokhsara (Gitea) (HTTP)", "http://git.rokhsara.com/xmha97/test/raw/branch/main/status");
         put("Fandak (Gitea) (HTTP)", "http://gitea.fandak.lol/xmha97/test/raw/branch/main/status");
+        put("Mred (Gitea) (HTTP)", "http://git.mred.ir/xmha97/test/raw/branch/main/status");
         put("Paragraph (Forgejo) (HTTP)", "https://git.prgph.fun/xmha97/test/raw/branch/main/status");
         put("AbreHamrahi (HTTP)", "http://abrehamrahi.ir/o/public/vlwU5cXR");
         put("AbreHamrahi (ShortenerLink) (HTTP)", "http://abhm.ir/kpWgPj");
